@@ -1,0 +1,72 @@
+.Checkout {
+  padding-bottom: var(--header-nav-height);
+
+  @include desktop {
+      margin-top: var(--header-total-height);
+  }
+
+  @include before-desktop {
+      padding-bottom: calc(var(--navigation-tabs-height) + 113px);
+      padding-top: 0rem;
+  }
+  &::before {
+    @include after-mobile {
+        content: '';
+        background: var(--breadcrumbs-background);
+        min-height: 0;
+        display: block;
+    }
+  }
+
+  .progressbar-container{
+    .progressbar{
+      background: var(--breadcrumbs-background);
+      display: flex;
+      align-items: center;
+      height: 100px;
+      width: 100%;
+      .line{
+        height: 3px;
+        background-color: $default-secondary-dark-color;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .line-circle{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        opacity: 0.7;
+        .line{
+          height: 3px;
+          background-color: gray;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+        .circle{
+          width: 30px;
+          height: 30px;
+          background-color: gray;
+          border-radius: 50%;
+          padding: 10px;
+          margin: 10px;
+          position: relative;
+          label{
+            &:nth-child(1){
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            &:nth-child(2){
+              position: absolute;
+              top: 35px;
+              left: -10px;
+            }
+          }
+        }
+      } 
+    }
+  }
+}
+      
